@@ -68,7 +68,8 @@ div.post p.summary {
   line-height: 1.4rem;
 }
 
-form.login form.register {
+form.login,
+form.register {
   max-width: 400px;
   margin: 0 auto;
 }
