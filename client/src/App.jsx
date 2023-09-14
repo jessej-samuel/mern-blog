@@ -5,19 +5,26 @@ import Layout from "./Layout";
 import IndexPage from "./IndexPage";
 import LoginPage from "./LoginPage";
 import RegisterPage from "./RegisterPage";
+import { UserContextProvider } from "./UserContext";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<IndexPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />} />
-      </Route>
-    </Routes>
+    <UserContextProvider>
+      {
+        <>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<IndexPage />} />
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/register" element={<RegisterPage />} />
+            </Route>
+          </Routes>
+        </>
+      }
+    </UserContextProvider>
   );
 }
 
 export default App;
 
-// Finished till 42:40
+// Finished till 1:42:00
